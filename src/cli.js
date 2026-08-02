@@ -1,7 +1,17 @@
-// Layer 3 of the stack: the CLI, built on top of quotes-formatter.
+// The CLI, built on top of quotes-formatter.
 
-import { formatAll } from "./formatter.js";
+import { formatQuote } from "./formatter.js";
+import { search } from "./search.js";
 
-for (const line of formatAll()) {
-  console.log(line);
+const term = process.argv[2];
+
+if (term) {
+  for (const quote of search(term)) {
+    console.log(formatQuote(quote));
+  }
+} else {
+  const { formatAll } = await import("./formatter.js");
+  for (const line of formatAll()) {
+    console.log(line);
+  }
 }
