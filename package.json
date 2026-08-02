@@ -1,0 +1,11 @@
+{
+  "name": "stacked-pr-demo",
+  "version": "1.0.0",
+  "description": "Demo repo for GitHub stacked pull requests (public preview)",
+  "type": "module",
+  "main": "src/cli.js",
+  "scripts": {
+    "start": "node src/cli.js"
+  },
+  "license": "MIT"
+}
